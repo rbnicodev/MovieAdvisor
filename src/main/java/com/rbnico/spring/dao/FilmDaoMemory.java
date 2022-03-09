@@ -5,6 +5,7 @@ import com.rbnico.spring.model.Film;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -18,6 +19,7 @@ public class FilmDaoMemory implements FilmDao{
     @Autowired
     private AppConfig appConfig;
 
+    @PostConstruct
     public void init() {
         films = UtilFilmFileReader.readFile(appConfig.getFile(), appConfig.getSeparator(), appConfig.getListSeparator());
     }

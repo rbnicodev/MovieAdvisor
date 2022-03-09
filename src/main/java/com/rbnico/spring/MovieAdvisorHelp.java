@@ -1,5 +1,6 @@
 package com.rbnico.spring;
 
+import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
 
 import javax.annotation.PostConstruct;
@@ -8,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Collectors;
 
+@Component
 public class MovieAdvisorHelp {
     private String help;
 
